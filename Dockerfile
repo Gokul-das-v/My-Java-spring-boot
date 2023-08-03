@@ -5,7 +5,7 @@ FROM openjdk:11
 WORKDIR /app
 
 # Copy the application JAR file into the container
-COPY /home/ubuntu/app/target/*.jar /app/my-app-1.0-SNAPSHOT.jar
+COPY /home/ubuntu/app/target/*.jar /app/
 
 # Set the command to run your application when the container starts
-CMD ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "gs-spring-boot-0.1.0.jar"]
