@@ -1,5 +1,11 @@
-FROM maven as mvn
+# Use an OpenJDK as the base image
+FROM openjdk:11
 
-COPY . .
+# Set the working directory inside the container
+WORKDIR /app
 
-RUN mvn -f app/pom.xml clean package
+# Copy the application JAR file into the container
+COPY /home/ubuntu/myagent/_work/2/a/app/target*.jar /app/my-app-1.0-SNAPSHOT.jar
+
+# Set the command to run your application when the container starts
+CMD ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]
